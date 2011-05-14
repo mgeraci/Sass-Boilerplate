@@ -245,11 +245,11 @@ body
 // Shiny buttons make people want to click them! Just add the class callToAction to any link!
 // Or mix it in with the color as a parameter!
 
-=callToAction(@buttonColor: #c97200)
+=callToAction($buttonColor: #c97200)
   // slave colors
-  @defaultStart: @buttonColor + 35%
-  @defaultEnd: @buttonColor
-  @borderColor: @buttonColor - 50%
+  $defaultStart: lighten($buttonColor, 10%)
+  $defaultEnd: $buttonColor
+  $borderColor: darken($buttonColor, 20%)
 
   // button positioning
   +floatClear
@@ -265,20 +265,20 @@ body
   text-shadow: rgba(0,0,0,0.2) -1px 0, rgba(0,0,0,0.2) 0 -1px, rgba(255,255,255,0.2) 0 1px
 
   // box styles
-  border: 1px solid @borderColor
+  border: 1px solid $borderColor
   +borderRadius(6px)
-  +boxShadow(0px 0px 2px @borderColor)
-  +gradientV4(@defaultStart, @defaultStart, 46, @defaultEnd, 54, @defaultEnd)
+  +boxShadow(0px, 0px, 2px, $borderColor)
+  +gradientV4($defaultStart, $defaultStart, 46, $defaultEnd, 54, $defaultEnd)
 
   // hover state
   &:hover
     color: #fff
 
     // gradient colors
-    @start: @defaultStart - 20%
-    @end: @defaultEnd - 20%
+    $start: darken($defaultStart, 10%)
+    $end: darken($defaultEnd, 10%)
 
-    .gradientV4(@start, @start, 46, @end, 54, @end)
+    +gradientV4($start, $start, 46, $end, 54, $end)
   
 
   // active (click) state
@@ -286,7 +286,7 @@ body
     color: #fff
 
     // gradient colors
-    @start: @defaultStart - 40%
-    @end: @defaultEnd - 40%
+    $start: darken($defaultStart, 20%)
+    $end: darken($defaultEnd, 20%)
 
-    +gradientV4(@start, @start, 46, @end, 54, @end)
+    +gradientV4($start, $start, 46, $end, 54, $end)
