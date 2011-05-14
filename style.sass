@@ -1,0 +1,312 @@
+// SASS Boilerplate Demo Page
+
+// import the boilerplate less file
+@import 'boilerplate'
+
+// variables
+$blue: #69a6b7
+$darkBlue: #04232B
+$highlight: #ffa52e
+$exampleColor1: #f4f0e4
+$exampleColor2: darken($exampleColor1, 60%)
+$gray: #ccc
+
+
+/* ================== */
+/* = General Styles = */
+/* ================== */
+
+// bg color
+body
+  background: $blue
+  color: $darkBlue
+  font-size: 18px
+
+// general link color
+a
+  color: #000
+
+  &:hover
+    color: $highlight
+    text-shadow: 0 -1px rgba(0,0,0,0.3)
+
+// section titles
+h2
+  font-size: 27px
+  color: $highlight
+  font-weight: bold
+  text-shadow: 0 -1px rgba(0,0,0,0.2), 0 1px rgba(0,0,0,0.1)
+  padding: 0 0 10px 0
+  
+  a
+    color: $highlight
+    cursor: default
+
+// style for the notes
+.note
+  color: $gray
+  text-shadow: 0 -1px rgba(0,0,0,0.2)
+
+
+// give some padding to the content sections
+.wrapOut
+  padding: 50px 0
+
+.section
+  width: $contentWidth
+  +floatClear
+  margin: 0 0 60px 0
+  overflow: hidden
+
+// code
+pre
+  background: #000
+  color: #fff
+  padding: 15px
+  margin: 10px 0 0 0
+  font-family: monaco
+
+
+/* ========== */
+/* = Header = */
+/* ========== */
+
+#header
+  background: darken(desaturate($blue, 5%), 21%)
+  padding: 15px 0
+  margin: 0 0 30px 0
+  color: $gray
+  letter-spacing: 0.1em
+  font-style: oblique
+  float: left
+  +boxShadow(0, 3px, 7px, darken(#355761, 10%))
+
+// used in header
+h1
+  display: inline
+  font-weight: bold
+  font-style: normal
+  color: $exampleColor1
+  letter-spacing: 0.1em
+  font-size: 37px
+  text-shadow: 0px -1px rgba(0,0,0,0.7), 0px 1px rgba(255,255,255,0.2)
+  float: left
+  margin: 0 20px 0 0
+  
+  // the  in the header
+  span
+    color: darken($highlight, 12%)
+    position: relative
+    bottom: 3px
+
+
+/* ======== */
+/* = Body = */
+/* ======== */
+
+// github link
+#forkMe
+  position: absolute
+  top: 0
+  right: 0
+
+#navigation
+  font-size: 22px
+
+// description and contents
+#what
+  ul
+    list-style-type: disc
+    margin: 0 0 0 25px
+  
+// exmaple box style
+=box
+  +floatClear
+  padding: 15px
+  width: 290px
+  margin: 0 0 20px 0
+  border: 1px solid darken($exampleColor1, 20%)
+  background: $exampleColor1
+
+// example descriptions
+.description
+  width: $contentWidth
+  +floatClear
+  margin: 0 0 30px 0
+
+// description with no associated example
+.noExample
+  margin: 0 0 50px 0
+
+// example contents
+.example
+  width: $contentWidth
+  +floatClear
+  margin: 0 0 50px 0
+  
+  // hide compiled code
+  span
+    display: none
+
+// show compiled code on hover
+.example
+  div:hover
+    span
+      display: inline
+  
+// round corners
+#rounded
+  +box
+  +borderRadius(15px)
+
+// lighter color for compiled code examples
+.CSS
+  color: desaturate(darken($exampleColor1, 45%), 30%)
+
+// general gradient style
+.gradient
+  +box
+  width: 437px
+  word-wrap: break-word
+
+// left gradient style
+=left
+  clear: left
+  margin: 0 20px 20px 0
+
+// vertical gradient
+#gradientV
+  +left
+  +gradientV(#F0CED6, #CED3F0)
+
+// horizontal gradient
+#gradientH
+  clear: right
+  +gradientH(#F0CED6, #CED3F0)
+
+#gradientV3
+  +left
+  +gradientV3(#F0CED6, #CED3F0, 50, #D2F0CE)
+
+#gradientH3
+  clear: right
+  +gradientH3(#F0CED6, #CED3F0, 50, #D2F0CE)
+
+#gradientV4
+  +left
+  +gradientV4(#F2F1CB, #F0CED6, 33, #CED3F0, 66, #D2F0CE)
+
+#gradientH4
+  clear: right
+  +gradientH4(#F2F1CB, #F0CED6, 33, #CED3F0, 66, #D2F0CE)
+
+// box shadow
+#shadow
+  +box
+  clear: left
+  margin: 0 30px 0 0
+  width: 360px
+  +boxShadow(3px, 3px, 6px, #000)
+
+#shadow2
+  +box
+  border-color: #000
+  clear: right
+  width: 400px
+  +boxShadow(2px, 2px, 3px, #000, inset)
+
+// transition example
+#transition
+  +box
+  width: 360px
+  height: 65px
+  overflow: hidden
+  
+  .css
+    display: block
+
+#transition:hover
+  background: #F5FAA0
+  height: 190px
+  
+  +transition(all, 1s, ease)
+
+// centering variable width
+#centeredContent
+  background: $exampleColor1
+  border: 1px solid darken($exampleColor1, 50%)
+  padding: 20px
+  
+  a span
+    display: none
+    
+  a:hover
+    color: darken($blue, 20%)
+    text-shadow: none
+  
+  a:hover > span
+    display: inline
+  
+// call to action example
+#callToActionExample
+  +callToAction
+
+// style the floatClear example
+.floatClearExample
+  +box
+
+// holds each cleafix example
+.clearfixContainer
+  float: left
+  margin: 0 20px 0 0
+
+.clearfixOuter
+  width: 350px
+  padding: 15px
+  background: $exampleColor1
+  border: 1px solid darken($exampleColor1, 10%)
+
+.clearfixInner
+  float: right
+  width: 50%
+  padding: 15px
+  background: desaturate(darken($exampleColor1, 20%), 20%)
+  border: 1px solid darken($exampleColor2, 10%)
+
+#clearfix
+  +clearfix
+
+#lastExample
+  margin-bottom: 0
+
+#lastSection
+  margin-bottom: 10px
+
+#content
+  padding-bottom: 0
+
+
+/* ==================== */
+/* = Download Section = */
+/* ==================== */
+
+#downloadWrapper
+  +floatClear
+  margin: 14px 0 10px 0
+  width: $contentWidth
+  
+  span
+    float: left  
+  
+  #downloadLink
+    +callToAction
+    float: left
+    margin: 0 10px 0 0
+    position: relative
+    bottom: 10px
+    
+    // parentheses' position is off
+    span
+      float: none
+      position: relative
+      bottom: 2px
