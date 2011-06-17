@@ -82,7 +82,7 @@ ul
 
 // Top-to-Bottom Gradient
 =gradientV($start, $end)
-  background: ($start + $end) / 2 // Non CSS3 browsers get the average color
+  background: mix($start, $end) // Non CSS3 browsers get the average color
   background-image: -moz-linear-gradient(top,  $start, $end) // FF 3.6
   background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($end)) // Safari 4+, Chrome
   background-image: -webkit-linear-gradient(top, $start, $end) // Chrome 10+, Safari 5.1+
@@ -94,7 +94,7 @@ ul
 
 // Left-to-Right Gradient
 =gradientH($start, $end)
-  background: ($start + $end) / 2 // Non CSS3 browsers get the average color
+  background: mix($start, $end) // Non CSS3 browsers get the average color
   background-image: -moz-linear-gradient(left,  $start, $end) // FF 3.6
   background-image: -webkit-gradient(linear, left center, right center, from($start), to($end)) // Safari 4+, Chrome
   background-image: -webkit-linear-gradient(left center, right center, from($start), to($end)) // Chrome 10+, Safari 5.1+
@@ -106,7 +106,7 @@ ul
 
 // Top-to-Bottom 3 Stop Gradient
 =gradientV3($start, $middle, $middlePos, $end)
-  background: ($start + $end) / 2 // Non CSS3 browsers get the average color
+  background: mix($start, $end) // Non CSS3 browsers get the average color
   background-image: -moz-linear-gradient(top,  $start, $middle $middlePos * 1%, $end) // FF 3.6
   background-image: -webkit-gradient(linear, left top, left bottom, from($start), color-stop($middlePos / 100, $middle), to($end)) // Safari 4+, Chrome
   background-image: -webkit-linear-gradient(top, from($start), color-stop($middlePos / 100, $middle), to($end)) // Chrome 10+, Safari 5.1+
@@ -117,7 +117,7 @@ ul
 
 // Left-to-Right 3 Stop Gradient
 =gradientH3($start, $middle, $middlePos, $end)
-  background: ($start + $end) / 2 // Non CSS3 browsers get the average color
+  background: mix($start, $end) // Non CSS3 browsers get the average color
   background-image: -moz-linear-gradient(left,  $start, $middle $middlePos * 1%, $end) // FF 3.6
   background-image: -webkit-gradient(linear, left center, right center, from($start), color-stop($middlePos / 100, $middle), to($end)) // Safari 4+, Chrome
   background-image: -webkit-linear-gradient(left, from($start), color-stop($middlePos / 100, $middle), to($end)) // Chrome 10+, Safari 5.1+
